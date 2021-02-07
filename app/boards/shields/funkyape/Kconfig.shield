@@ -1,0 +1,8 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_FUNKYAPE_LEFT
+	def_bool $(shields_list_contains,funkyape_left)
+
+config SHIELD_FUNKYAPE_RIGHT
+	def_bool $(shields_list_contains,funkyape_right)
