@@ -2,7 +2,7 @@
 if SHIELD_FUNKYAPE_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "FunkApe Left"
+	default "FunkyApe Left"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
@@ -12,7 +12,7 @@ endif
 if SHIELD_FUNKYAPE_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "FunkApe Right"
+	default "FunkyApe Right"
 
 endif
 
