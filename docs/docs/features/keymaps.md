@@ -33,7 +33,7 @@ For example, the simplest behavior in ZMK is the "key press" behavior, which res
 (a certain spot on the keyboard), and when that position is pressed, send a keycode to the host, and
 when the key position is released, updates the host to notify of the keycode being released.
 
-For the full set of possible behaviors, start at the [Key Press](/docs/behaviors/key-press) behavior.
+For the full set of possible behaviors, start at the [Key Press](../behaviors/key-press.md) behavior.
 
 ## Layers
 
@@ -58,10 +58,10 @@ in the stack _also_ get the event.
 
 Binding a behavior at a certain key position may include up to two extra parameters that are used to
 alter the behavior when that specific key position is activated/deactivated. For example, when binding
-the "key press" (`kp`) behavior at a certain key position, you must specific _which_ keycode should
+the "key press" (`kp`) behavior at a certain key position, you must specify _which_ keycode should
 be used for that key position.
 
-```
+```dts
 &kp A
 ```
 
@@ -69,7 +69,7 @@ In this case, the `A` is actually a define for the raw HID keycode, to make keym
 
 For example of a binding that uses two parameters, you can see how "mod-tap" (`mt`) is bound:
 
-```
+```dts
 &mt LSHIFT D
 ```
 
@@ -87,7 +87,7 @@ for what would otherwise be cryptic integer keycodes, etc. This also allows brin
 
 The top two lines of most keymaps should include:
 
-```
+```dts
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 ```
@@ -98,9 +98,9 @@ The second include brings in the defines for all the keycodes (e.g. `A`, `N1`, `
 
 ### Root devicetree Node
 
-ALl the remaining keymap nodes will be nested inside of the root devicetree node, like so:
+All the remaining keymap nodes will be nested inside of the root devicetree node, like so:
 
-```devicetree
+```dts
 / {
     // Everything else goes here!
 };
@@ -111,12 +111,12 @@ ALl the remaining keymap nodes will be nested inside of the root devicetree node
 Nested under the devicetree root, is the keymap node. The node _name_ itself is not critical, but the node **MUST** have a property
 `compatible = "zmk,keymap"` in order to be used by ZMK.
 
-```
+```dts
     keymap {
-		compatible = "zmk,keymap";
+        compatible = "zmk,keymap";
 
         // Layer nodes go here!
-	};
+    };
 ```
 
 ### Layers
@@ -128,10 +128,10 @@ that defines just one layer for this keymap:
 
 Each layer should have:
 
-1. A `bindings` property this will be a list of behaviour bindings, one for each key position for the keyboard.
+1. A `bindings` property this will be a list of behavior bindings, one for each key position for the keyboard.
 1. (Optional) A `sensor-bindings` property that will be a list of behavior bindings for each sensor on the keyboard. (Currently, only encoders are supported as sensor hardware, but in the future devices like trackpoints would be supported the same way)
 
-For the full set of possible behaviors, start at the [Key Press](/docs/behaviors/key-press) behavior.
+For the full set of possible behaviors, start at the [Key Press](../behaviors/key-press.md) behavior.
 
 ### Complete Example
 
