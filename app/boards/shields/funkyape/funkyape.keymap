@@ -51,6 +51,10 @@
 #define OBLE OUT_BLE
 
 
+&led_strip {
+    chain-length = <35>;
+};
+
 &mt {
     tapping_term_ms = <200>;
 };
@@ -73,7 +77,6 @@
                          &kp MINUS &kp LBKT  &kp LALT    &lt LWR SPACE                &lt RSE ENTER   &kp LGUI  &kp RBKT  &kp EQUAL
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
 			>;
-
 			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
 		};
 
@@ -91,7 +94,6 @@
                          &mo ADJ   &trans    &kp LGUI         &trans                   &mo ADJ        &kp RALT  &trans    &mo ADJ 
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
 			>;
-
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN >;
 		};
 
@@ -109,7 +111,6 @@
                          &mo ADJ   &trans    &kp LGUI         &mo ADJ                   &trans        &kp RALT  &trans    &mo ADJ 
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
 			>;
-
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 
@@ -127,7 +128,6 @@
                          &trans    &trans    &trans           &trans                    &trans        &trans    &trans    &trans 
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
 			>;
-
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 
@@ -142,10 +142,9 @@
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐       ┌──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     &none     epw EOFF  &none     &none     &none     out OBLE  &trans            &trans     &none     &none     &none     &none     &none     &none
 // └─────────┴─────────┴┬────────┴┬────────┴┬────────┴┬────────┴─────────┴┐     ┌┴──────────┴────────┬┴────────┬┴────────┬┴────────┬┴─────────┴─────────┘
-                         &trans    &reset    &bootloader      &trans                    &trans     &bootloader  &reset    &trans 
+                         &trans   &sys_reset &bootloader      &trans                    &trans     &bootloader &sys_reset    &trans 
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
 			>;
-
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 	};
