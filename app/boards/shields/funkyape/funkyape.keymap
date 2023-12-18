@@ -40,12 +40,12 @@
 #define RSPI RGB_SPI
 #define RSPD RGB_SPD
 
-#define epw  &ext_power 
-#define ETOG EP_TOG 
+#define epw  &ext_power
+#define ETOG EP_TOG
 #define EOFF EP_OFF
 #define EON  EP_ON
 
-#define out  &out 
+#define out  &out
 #define OTOG OUT_TOG
 #define OUSB OUT_USB
 #define OBLE OUT_BLE
@@ -55,16 +55,12 @@
     chain-length = <35>;
 };
 
-&mt {
-    tapping_term_ms = <200>;
-};
-
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-		default_layer {
-			bindings = <
+        default_layer {
+            bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                            ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
     &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                 &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp GRAVE
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
@@ -76,12 +72,12 @@
 // └─────────┴─────────┴┬────────┴┬────────┴┬────────┴┬────────┴─────────┴┐     ┌┴──────────┴────────┬┴────────┬┴────────┬┴────────┬┴─────────┴─────────┘
                          &kp MINUS &kp LBKT  &kp LALT    &lt LWR SPACE                &lt RSE ENTER   &kp LGUI  &kp RBKT  &kp EQUAL
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
-			>;
-			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
-		};
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
+        };
 
-		lower_layer {
-			bindings = <
+        lower_layer {
+            bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                            ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
     &kp F12   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                                 &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
@@ -91,14 +87,14 @@
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐       ┌──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     &trans    &none     &none     &none     &kp PG_DN &none     &trans            &trans     &kp VLDN  &kp MPRV  &none     &none     &none     &trans
 // └─────────┴─────────┴┬────────┴┬────────┴┬────────┴┬────────┴─────────┴┐     ┌┴──────────┴────────┬┴────────┬┴────────┬┴────────┬┴─────────┴─────────┘
-                         &mo ADJ   &trans    &kp LGUI         &trans                   &mo ADJ        &kp RALT  &trans    &mo ADJ 
+                         &mo ADJ   &trans    &kp LGUI         &trans                   &mo ADJ        &kp RALT  &trans    &mo ADJ
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
-			>;
-			sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN >;
-		};
+            >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN >;
+        };
 
-		raise_layer {
-			bindings = <
+        raise_layer {
+            bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                            ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
     &kp F12   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                                 &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
@@ -108,14 +104,14 @@
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐       ┌──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     &trans    &none     &none     &none     &none     &none     &trans            &trans     &none     &none     &none     &none     &kp BSLH  &trans
 // └─────────┴─────────┴┬────────┴┬────────┴┬────────┴┬────────┴─────────┴┐     ┌┴──────────┴────────┬┴────────┬┴────────┬┴────────┬┴─────────┴─────────┘
-                         &mo ADJ   &trans    &kp LGUI         &mo ADJ                   &trans        &kp RALT  &trans    &mo ADJ 
+                         &mo ADJ   &trans    &kp LGUI         &mo ADJ                   &trans        &kp RALT  &trans    &mo ADJ
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
-			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
 
-		adjust_layer {
-			bindings = <
+        adjust_layer {
+            bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                            ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
     &trans    &none     &none     &none     &none     &none                                  &none     &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
@@ -125,16 +121,16 @@
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐       ┌──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     &none     rgb RBRD  rgb RSAD  rgb RHUD  rgb REFR  rgb RSPD  &mo HWA           &mo HWA    rgb RSPD  rgb REFR  rgb RHUD  rgb RSAD  rgb RBRD  &none
 // └─────────┴─────────┴┬────────┴┬────────┴┬────────┴┬────────┴─────────┴┐     ┌┴──────────┴────────┬┴────────┬┴────────┬┴────────┬┴─────────┴─────────┘
-                         &trans    &trans    &trans           &trans                    &trans        &trans    &trans    &trans 
+                         &trans    &trans    &trans           &trans                    &trans        &trans    &trans    &trans
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
-			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
 
-		hardware_adjust_layer {
-			bindings = <
+        hardware_adjust_layer {
+            bindings = <
 // ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐                            ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-	&bt BTD   &bt BTP 0 &bt BTP 1 &bt BTP 2 &bt BTP 3 &bt BTP 4                              &bt BTP 4 &bt BTP 3 &bt BTP 2 &bt BTP 1 &bt BTP 0 &bt BTD
+    &bt BTD   &bt BTP 0 &bt BTP 1 &bt BTP 2 &bt BTP 3 &bt BTP 4                              &bt BTP 4 &bt BTP 3 &bt BTP 2 &bt BTP 1 &bt BTP 0 &bt BTD
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     &none     &none     &none     &none     &none     out OTOG                               &none     &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
@@ -142,10 +138,10 @@
 // ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐       ┌──────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
     &none     epw EOFF  &none     &none     &none     out OBLE  &trans            &trans     &none     &none     &none     &none     &none     &none
 // └─────────┴─────────┴┬────────┴┬────────┴┬────────┴┬────────┴─────────┴┐     ┌┴──────────┴────────┬┴────────┬┴────────┬┴────────┬┴─────────┴─────────┘
-                         &trans   &sys_reset &bootloader      &trans                    &trans     &bootloader &sys_reset    &trans 
+                         &trans   &sys_reset &bootloader      &trans                    &trans     &bootloader &sys_reset    &trans
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
-			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
-	};
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
 };

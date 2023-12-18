@@ -2,28 +2,28 @@
 if SHIELD_FUNKYAPE_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "WalkingApe"
+    default "FunkyApe"
 
 config ZMK_SPLIT_ROLE_CENTRAL
-	default y
+    default y
 
 endif
 
 if SHIELD_FUNKYAPE_LEFT || SHIELD_FUNKYAPE_RIGHT
 
 config ZMK_SPLIT
-	default y
+    default y
 
 if ZMK_DISPLAY
 
 config I2C
-	default y
+    default y
 
 config SSD1306
-	default y
+    default y
 
 config SSD1306_REVERSE_MODE
-	default y
+    default y
 
 endif # ZMK_DISPLAY
 
