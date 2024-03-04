@@ -13,7 +13,7 @@ if SHIELD_FUNKYAPE_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "FunkyApeR"
-    
+
 endif
 
 
@@ -23,4 +23,3 @@ config ZMK_SPLIT
     default y
 
 endif
-
