@@ -4,10 +4,8 @@ name: FunkyApe
 type: shield
 url: https://github.com/datno111/zmk
 requires: [pro_micro]
-exposes: [i2c_oled]
 features:
   - keys
-  - display
   - encoder
   - underglow
 siblings:

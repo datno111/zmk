@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -91,7 +85,7 @@
                          &kp MINUS &kp LBKT  &kp LALT       &kp SPACE                    &kp ENTER    &kp LGUI  &kp RBKT  &kp EQUAL
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp VLUP VLDN &inc_dec_kp MNXT MPRV>;
 		};
 
         lower_layer {
@@ -108,7 +102,7 @@
                          &mo ADJ   &trans    &kp LGUI         &trans                   &mo ADJ        &kp RALT  &trans    &mo ADJ
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN >;
+            sensor-bindings = <&inc_dec_kp VLUP VLDN &inc_dec_kp MNXT MPRV>;
         };
 
         raise_layer {
@@ -125,7 +119,7 @@
                          &mo ADJ   &trans    &kp LGUI         &mo ADJ                   &trans        &kp RALT  &trans    &mo ADJ
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp VLUP VLDN &inc_dec_kp MNXT MPRV>;
         };
 
         adjust_layer {
@@ -142,7 +136,7 @@
                          &trans    &trans    &trans           &trans                    &trans        &trans    &trans    &trans
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            // sensor-bindings = <&inc_dec_kp VLUP VLDN &inc_dec_kp MNXT MPRV>;
         };
 
         hardware_adjust_layer {
@@ -159,7 +153,7 @@
                          &trans   &sys_reset &bootloader      &trans                    &trans     &bootloader &sys_reset    &trans
 //                      └─────────┴─────────┴─────────┴───────────────────┘     └────────────────────┴─────────┴─────────┴─────────┘
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            // sensor-bindings = <&inc_dec_kp VLUP VLDN &inc_dec_kp MNXT MPRV>;
         };
     };
 };
